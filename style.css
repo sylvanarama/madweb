@@ -39,7 +39,7 @@ li {
 }
 body {
   background: #506b35;
-  font-family: 'Garamond';
+  font-family: 'Garamond', 'Times', serif;
   color: white;
 }
 p {
@@ -197,57 +197,54 @@ input:focus, textarea:focus {
   }
 }
 
-
-
 @media all and (min-width: 500px) {
     .menu{display:block;}
-    .nav{display:none;}
+    .dropdown{display:none;}
 }
 
 @media all and (max-width: 500px) {
   .menu{display:none;}
-  .nav{display:block;}
+  .dropdown{display:block;}
 }
 
-.nav {
-  height:2rem;
-  background:rgba(0,0,0,0.5);
-}
-
-.nav-head{
-  -webkit-transition: all 0.7s ease;
-  -moz-transition: all 0.7s ease;
-  transition: all 0.7s ease;
-}
-
-.nav:hover .nav-head {
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  z-index:1000;
+  height:30px;
+  position: relative;
+  display: inline;
   background:rgba(0,0,0,0.8);
+  width:100%;
 }
 
-.nav-items {
-  text-align:left;
-  height:0;
-  overflow:hidden;
-  -webkit-transition: height 0.6s ease;
-  -moz-transition: height 0.6s ease;
-  -o-transition: height 0.6s ease;
-  transition: height 0.6s ease;
-}
-
-.nav:hover .nav-items {
-  height:300px;
-}
-
-.nav-items li {
-  display:block;
-  font-size:1em;
-  margin:auto;
-  padding:10px;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  transition: all 0.3s;
-}
-
-.nav-items li:hover {
+/* Dropdown Button */
+.dropbtn {
+  cursor: pointer;
+  height:30px;
+  outline:0;
   background:rgba(0,0,0,0.5);
 }
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover{
+  background: rgba(0,0,0,0.6);
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: relative;
+  background-color: rgba(0,0,0,0.5);
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: white;
+  font-size:0.9rem;
+  padding: 10px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background:rgba(0,0,0,0.5)}
